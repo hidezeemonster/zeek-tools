@@ -230,10 +230,101 @@
       font-size: 0.85rem;
     }
 
+    /* Screenshots */
+    .screenshots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .screenshot-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .screenshot-item img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+    .screenshot-caption {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .screenshots { grid-template-columns: 1fr; }
+    }
+
+    /* Card detail */
+    .card-detail-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    /* Timeframe table */
+    .tf-table-wrap {
+      overflow-x: auto;
+      margin-bottom: 24px;
+    }
+    .tf-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .tf-table th {
+      background: var(--surface2);
+      color: var(--text-muted);
+      font-weight: 600;
+      text-align: left;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+    }
+    .tf-table td {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .tf-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .tf-highlight { color: #f0a04b; font-size: 0.82rem; }
+
+    /* Params */
+    .params-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+    .param-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 28px;
+    }
+    .param-item {
+      display: flex;
+      gap: 10px;
+      font-size: 0.88rem;
+      align-items: baseline;
+    }
+    .param-name {
+      color: var(--accent);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      min-width: 140px;
+      flex-shrink: 0;
+    }
+    .param-desc { color: var(--text-muted); }
+
     /* Responsive */
     @media (max-width: 600px) {
       .card { padding: 20px; }
       .features { grid-template-columns: 1fr; }
+      .param-item { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -254,7 +345,7 @@
 <!-- ===== インジケーター ===== -->
 <section id="indicators">
   <div class="section-title"><span>#</span> インジケーター</div>
-  <p class="section-sub">現在 2 つのインジケーターを無料公開しています。</p>
+  <p class="section-sub">現在 1 つのインジケーターを無料公開しています。</p>
 
   <!-- ZeekTimeGrid -->
   <div class="card" id="timegrid">
@@ -262,7 +353,7 @@
       <div class="card-icon icon-blue">📐</div>
       <div>
         <div class="card-title">ZeekTimeGrid</div>
-        <div class="card-desc">時間軸に合わせた垂直グリッドラインを自動描画するインジケーター</div>
+        <div class="card-desc">シンプル・軽量な時間グリッドインジケーター。タイムフレームに合わせた垂直グリッドラインを自動描画します。</div>
       </div>
     </div>
 
@@ -297,6 +388,21 @@
       </div>
     </div>
 
+    <div class="screenshots">
+      <div class="screenshot-item">
+        <img src="images/zeektimegrid-chart.png" alt="ZeekTimeGrid チャート表示例">
+        <span class="screenshot-caption">M5足 — 1時間ごとにグリッドラインを自動描画</span>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/zeektimegrid-settings.png" alt="ZeekTimeGrid 設定パラメーター">
+        <span class="screenshot-caption">パラメーター設定ダイアログ</span>
+      </div>
+    </div>
+
+    <p class="card-detail-desc">
+      シンプルで軽量な時間グリッド表示インジケーターです。タイムフレームに合わせた垂直ラインを自動描画するだけのシンプルな作りで、チャートへの負荷を最小限に抑えています。余計な機能を省いたシンプル設計で、どんな環境でもサクサク動作します。
+    </p>
+
     <div class="btn-actions">
       <a class="btn btn-primary" href="https://github.com/hidezeemonster/zeek-tools/releases/latest/download/ZeekTimeGrid.ex4" download>
         ⬇ ダウンロード (.ex4)
@@ -304,53 +410,6 @@
     </div>
   </div>
 
-  <!-- ZeekLineTouchAlert -->
-  <div class="card" id="linealert">
-    <div class="card-header">
-      <div class="card-icon icon-green">🔔</div>
-      <div>
-        <div class="card-title">ZeekLineTouchAlert</div>
-        <div class="card-desc">水平線・トレンドラインへの価格タッチをリアルタイムで検知してアラート通知</div>
-      </div>
-    </div>
-
-    <div class="features">
-      <div class="feature-item">
-        <span class="feature-icon">📏</span>
-        <div class="feature-text">
-          <strong>水平線タッチ検知</strong>
-          <span>チャートに引いた水平線に価格が触れた瞬間にアラート</span>
-        </div>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon">📈</span>
-        <div class="feature-text">
-          <strong>トレンドラインブレイク検知</strong>
-          <span>ラインを上抜け・下抜けしたタイミングで売買シグナルを通知</span>
-        </div>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon">🖱️</span>
-        <div class="feature-text">
-          <strong>Alert ON / OFF 切替</strong>
-          <span>各ラインのラベルをクリックするだけで個別に通知を管理</span>
-        </div>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon">🔗</span>
-        <div class="feature-text">
-          <strong>ラベル自動追従</strong>
-          <span>ラインをドラッグ移動してもラベルが自動で追従</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="btn-actions">
-      <a class="btn btn-primary" href="https://github.com/hidezeemonster/zeek-tools/releases/latest/download/ZeekLineTouchAlert.ex4" download>
-        ⬇ ダウンロード (.ex4)
-      </a>
-    </div>
-  </div>
 </section>
 
 <!-- ===== インストール ===== -->
