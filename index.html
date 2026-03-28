@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zeek Indicators - MT4 無料インジケーター</title>
+  <title>Zeek Indicators - MT4/MT5 無料インジケーター</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -337,9 +337,9 @@
 </header>
 
 <div class="hero">
-  <div class="badge">MT4 対応 · 無料配布</div>
+  <div class="badge">MT4 / MT5 対応 · 無料配布</div>
   <h1>トレードを<span>もっと快適</span>に。</h1>
-  <p>MT4 向けに開発した無料インジケーターを配布しています。<br>ダウンロードしてすぐに使えます。</p>
+  <p>MT4 / MT5 向けに開発した無料インジケーターを配布しています。<br>ダウンロードしてすぐに使えます。</p>
 </div>
 
 <!-- ===== インジケーター ===== -->
@@ -405,7 +405,10 @@
 
     <div class="btn-actions">
       <a class="btn btn-primary" href="https://github.com/hidezeemonster/zeek-tools/releases/latest/download/ZeekTimeGrid.ex4" download>
-        ⬇ ダウンロード (.ex4)
+        ⬇ ダウンロード (.ex4 / MT4)
+      </a>
+      <a class="btn btn-secondary" href="https://github.com/hidezeemonster/zeek-tools/releases/latest/download/ZeekTimeGrid.ex5" download>
+        ⬇ ダウンロード (.ex5 / MT5)
       </a>
     </div>
   </div>
@@ -416,9 +419,10 @@
 <section id="install">
   <hr>
   <div class="section-title"><span>#</span> インストール手順</div>
-  <p class="section-sub">MT4 へのインジケーター追加は 3 ステップで完了します。</p>
+  <p class="section-sub">各プラットフォームへのインジケーター追加は 3 ステップで完了します。</p>
 
   <div class="card">
+    <div class="params-title">MT4 の場合</div>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -439,6 +443,33 @@
         <div class="step-body">
           <strong>インジケーターをチャートに適用</strong>
           <p>MT4 の「ナビゲーター」ウィンドウから対象インジケーターをチャートへドラッグ＆ドロップしてください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="params-title">MT5 の場合</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>.ex5 ファイルをダウンロード</strong>
+          <p>上記ダウンロードボタンから <code>.ex5</code> ファイルを保存してください。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>MT5 の Indicators フォルダに配置</strong>
+          <p>MT5 メニューの <strong>ファイル → データフォルダを開く</strong> をクリック → <code>MQL5 / Indicators</code> フォルダに .ex5 ファイルをコピーします。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>インジケーターをチャートに適用</strong>
+          <p>MT5 の「ナビゲーター」ウィンドウから対象インジケーターをチャートへドラッグ＆ドロップしてください。</p>
         </div>
       </div>
     </div>
