@@ -298,6 +298,18 @@
     .compare-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
     .check { color: var(--accent2); font-weight: 700; }
     .cross { color: var(--text-muted); }
+    .wip {
+      display: inline-block;
+      background: rgba(240, 160, 75, 0.15);
+      color: #f0a04b;
+      border: 1px solid rgba(240, 160, 75, 0.35);
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .col-wip { color: #f0a04b; }
     .col-free { color: var(--accent); }
 
     /* Card desc */
@@ -432,7 +444,7 @@
 
   <div class="notice">
     <strong>Free 版について：</strong>
-    ロット管理は「手動入力」のみ対応です。資金比率・固定リスクによる自動ロット計算は製品版のみ対応しています。
+    ロット管理は「手動入力」のみ対応です。資金比率・固定リスクによる自動ロット計算は製品版で対応予定です（<span class="wip">準備中</span>）。
     バックテストには対応していません（リアルトレード専用）。
   </div>
 </section>
@@ -441,7 +453,7 @@
 <section id="compare">
   <hr>
   <div class="section-title"><span>#</span> Free 版と製品版の違い</div>
-  <p class="section-sub">Free 版は全ての主要機能を無償で利用できます。</p>
+  <p class="section-sub">Free 版は全ての主要機能を無償で利用できます。製品版は現在準備中です。</p>
 
   <div class="compare-table-wrap">
     <table class="compare-table">
@@ -449,7 +461,7 @@
         <tr>
           <th class="col-feature">機能</th>
           <th class="col-free">Free 版</th>
-          <th>製品版</th>
+          <th class="col-wip">製品版 <span class="wip">準備中</span></th>
         </tr>
       </thead>
       <tbody>
@@ -486,7 +498,7 @@
         <tr>
           <td class="col-feature">ロット管理（資金比率・固定リスク）</td>
           <td><span class="cross">—</span></td>
-          <td><span class="check">✓</span></td>
+          <td><span class="wip">準備中</span></td>
         </tr>
       </tbody>
     </table>
